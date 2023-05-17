@@ -1,6 +1,6 @@
 .container {
   background-color: #4c5b63;
-  height: 35vh;
+  height: 38vh;
   width: 100%;
   bottom: 0;
   position: fixed;
@@ -15,12 +15,11 @@
   justify-content: center;
   padding: 2rem;
   :nth-child(1) {
-    h3{
-        font-weight: 900;
-        font-size: 28px;
-        margin-top: 5px;
+    h3 {
+      font-weight: 900;
+      font-size: 28px;
+      margin-top: 5px;
     }
-  
   }
 
   :nth-child(2) {
@@ -75,13 +74,13 @@
   bottom: 0;
   color: #fff;
   font-weight: 400;
-  font-size: 9px;
+  font-size: 17px;
   left: 0;
   right: 0;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 37%;
+  margin-right: 50%;
   width: 40em;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -99,7 +98,7 @@
   .top {
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    gap: 30px;
   }
   .bottom {
     display: flex;
@@ -123,13 +122,16 @@
     margin-left: 0%;
   }
   .container__copyright {
-    position: absolute;
+
     bottom: 0;
     color: #fff;
     font-weight: 400;
     font-size: 9px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40em;
     margin-bottom: 20px;
-    right: 10%;
-    left: 10%;
+    align-self: center;
+    text-align: center;
   }
 }

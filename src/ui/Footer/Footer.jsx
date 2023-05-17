@@ -73,7 +73,7 @@ const Footer = () => {
           </div>
         </section>
       </div>
-      <div className={footerStyles.container__divider}/>
+      {/* <div className={footerStyles.container__divider}/> */}
     </div>
 
     <div className={footerStyles.container__mobile}>
@@ -119,12 +119,11 @@ const Footer = () => {
        
      
       </div>
-      <div className={footerStyles.container__divider}/>
     </div>
-    
-    <div className={footerStyles.container__copyright}>
+    <div className={footerStyles.container__divider}>
     Copyright © {new Date().getFullYear()} | Holidaze, designed and programmed by Nsebo  
-    </div>
+         </div>
+  
     </>
     
   );

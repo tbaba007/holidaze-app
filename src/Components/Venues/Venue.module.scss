@@ -1,0 +1,55 @@
+.container{
+    
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    justify-content: center;
+    text-align: left;
+    gap: 10px;
+    
+    &__img{
+        width: 341px;
+        height: 5vh;
+
+    }
+
+    &__header{
+        color:#081229;
+        font-weight: 600;
+        font-size: 16px;
+        
+       
+    }
+
+    &__duration{
+        color:#081229;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: left;
+        margin-left: 15px;
+    }
+    &__features{
+        display: flex;
+        flex-direction: row;
+        color:#081229;
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    &__price{
+        color:#081229;
+        font-weight: 700;
+        font-size: 20px;
+    }
+}
+
+.container__wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 150px;
+    :nth-child(3){
+        margin-left: -30px;
+    }
+   
+}

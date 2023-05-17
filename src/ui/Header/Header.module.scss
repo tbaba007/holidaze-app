@@ -1,5 +1,56 @@
 .container{
-    width: 90%;
+    width: 80%;
     height: 82px;
     background-color: #F3F6F8;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    margin-left: 10%;
+    margin-right: 15%;
+}
+
+.container__left{
+    width: 200px;
+   text-align: left;
+    margin-top: 16px;
+    font-weight: 900;
+    font-size: 28px;
+}
+
+.container__middle{
+    margin-top: 20px;
+    width: 500px;
+    display: flex;
+    gap: 50px;
+    label{
+        cursor: pointer;
+    }
+}
+
+.container__right{
+    margin-top: 10px;
+    width: 500px;
+    display: flex;
+    gap:20px;
+    justify-content: flex-end;
+}
+.container__drawer{
+    float: left;
+    margin-left: -20px;
+}
+
+@media only screen and (max-width:600px) {
+    .container__middle{
+        display: none;
+    }
+    .container__right{
+        display: none;
+    }
+    .container{
+        width: 100%;
+        position: fixed;
+        margin-left: 0;
+        padding: 10px;
+    }
 }

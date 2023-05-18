@@ -3,22 +3,22 @@ import HeaderStyles from './Header.module.scss';
 //import navIcon from '../../assets/icons/drawer.svg'
 const Header=()=>{
     return (
-        <div className={HeaderStyles.container}>
-            <div className={HeaderStyles.container__left}>
+        <section className={HeaderStyles.container}>
+            <section className={HeaderStyles.container__left}>
                 Holidaze
-            </div>
-            <div className={HeaderStyles.container__middle}>
+            </section>
+            <section className={HeaderStyles.container__middle}>
                <label>Explore</label>
                <label>Rooms</label>
                <label>About Us</label>
                <label>List your property</label>
-            </div>
-            <div className={HeaderStyles.container__right}>
-               <Button text="Login"></Button>
+            </section>
+            <section className={HeaderStyles.container__right}>
+               <button className={HeaderStyles.login}>Login</button>
                <Button text="Sign Up"></Button>
-            </div>
+            </section>
          
-        </div>
+        </section>
     )
 }
 

@@ -1,13 +1,13 @@
 .container{
-    width: 80%;
+    width: 52%;
     height: 82px;
     background-color: #F3F6F8;
     display: flex;
     justify-content: space-between;
     position: absolute;
-    top: 0;
-    margin-left: 10%;
-    margin-right: 15%;
+    top: 4%;
+    left: 49%;
+    transform: translate(-50%, -50%);
 }
 
 .container__left{
@@ -22,7 +22,10 @@
     margin-top: 20px;
     width: 500px;
     display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
     gap: 50px;
+    margin-left: 70px;
     label{
         cursor: pointer;
     }
@@ -53,4 +56,14 @@
         margin-left: 0;
         padding: 10px;
     }
+}
+
+.login{
+    height:44.63px;
+    width: 105.04px;
+    color: #4C5B63;
+    background-color: #fff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }

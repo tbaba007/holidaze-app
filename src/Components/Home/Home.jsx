@@ -28,7 +28,6 @@ const bookingUrls = [
     title: "Search",
     icon: searchIcon,
   },
-
 ];
 const Home = () => {
   document.title = "Home";
@@ -43,16 +42,43 @@ const Home = () => {
         </div>
       </div>
       <div className={HomepageStyles.banner__footer}>
-
-        {
-            bookingUrls.map(item=>{
-                return <div id={item.id} className={HomepageStyles.banner__footer__container}>{<img src={item.icon} alt={item.title} className={HomepageStyles.banner__footer__container__img}/>}{item.title}</div>
-            })
-        }
-       
+        {bookingUrls.map((item) => {
+          return (
+            <div
+              id={item.id}
+              className={HomepageStyles.banner__footer__container}
+            >
+              {
+                <img
+                  src={item.icon}
+                  alt={item.title}
+                  className={HomepageStyles.banner__footer__container__img}
+                />
+              }
+              {item.title}
+            </div>
+          );
+        })}
       </div>
-     
-     <Venue/>
+      <section className={HomepageStyles.venuHeader}>
+        <section className={HomepageStyles.venuHeader__left}>
+          Featured Venures
+          <label>Explore our featured ventures</label>
+        </section>
+        <div className={HomepageStyles.venuHeader__right}>View all items</div>
+      </section>
+      <Venue />
+
+        <section className={HomepageStyles.subscriberContainer}>
+        <span className={HomepageStyles.subscriberContainer__header}>Subscribe to get the latest<br/>news about us.</span>
+        <br/>
+        <span>Subscribe to get notified about our special offers. Enter your email below.</span>
+       
+        <section className={HomepageStyles.subscriberContainer__input}>
+        <input type="email" placeholder="Enter Your Email Address"/>
+        </section>
+        
+        </section>
     </>
   );
 };

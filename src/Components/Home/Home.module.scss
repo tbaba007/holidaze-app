@@ -2,11 +2,12 @@
   width: 100%;
   margin-top: 82px;
 }
-
 .headerText {
   position: absolute;
   top: 0;
-  left: 40%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -25,29 +26,29 @@
     margin-top: 30px;
   }
 }
-
 .banner__footer {
   display: flex;
   flex-direction: row;
   position: absolute;
   top: 8%;
-  left: 50%;
+  left: 49%;
   transform: translate(-50%, -50%);
   margin-top: 60vh;
-  :nth-child(2){
+  :nth-child(2) {
     display: flex;
     gap: 4px;
     padding-left: 10px;
     padding-right: 10px;
-}
+  }
   :nth-child(4) {
     background-color: #fff;
     color: #4c5b63;
     display: flex;
     flex-direction: row-reverse;
+    width: 215px;
   }
   &__container {
-    width: 245px;
+    width: 250px;
     height: 80px;
     color: #fff;
     background-color: #4c5b63;
@@ -63,21 +64,99 @@
     justify-content: center;
     gap: 10px;
 
-    
-
-    &__img{
-        width: 15px;
-        height: 15px;
-        margin-top: 32px;
+    &__img {
+      width: 15px;
+      height: 15px;
+      margin-top: 32px;
     }
   }
 }
+.venuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 60em;
+  &__left {
+    font-family: "Inter";
+    margin-left: -30px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 25px;
+    color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    flex-direction: column;
+    :nth-child(1) {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      margin-top: 5px;
+      color: rgba(0, 0, 0, 0.65);
+    }
+  }
+  &__right {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 23px;
+    /* identical to box height */
 
-
+    color: #000000;
+  }
+}
+.subscriberContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  &__header {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* Real estate primary */
+    color: #081229;
+  }
+  &__body {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #081229;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin-top: 10px;
+  }
+  &__input {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    input[type="email"] {
+      width: 500px;
+      height: 50px;
+      box-shadow: 2px 4px 32px rgba(37, 49, 65, 0.2);
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+  }
+}
 @media only screen and (max-width: 769px) {
   .banner__footer {
     margin-top: 65vh;
-    // margin-left: 10px!important;
   }
 }
-

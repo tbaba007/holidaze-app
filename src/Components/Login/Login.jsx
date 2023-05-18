@@ -68,7 +68,7 @@ const Login = () => (
           <label>forgot password</label>
           </div>
           <button type="submit" disabled={isSubmitting}>
-            Login
+            Log in
           </button>
         </form>
       )}

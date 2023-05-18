@@ -11,6 +11,7 @@ import beachImage from '../../assets/images/Beach.svg';
 import outdoorImage from '../../assets/images/Outdoor.svg';
 import Venue from "../Venues";
 import Header from "../../ui/Header";
+import Footer from "../../ui/Footer";
 
 const bookingUrls = [
   {
@@ -113,6 +114,8 @@ const Home = () => {
         </div>
      
       </section>
+    <Footer/>
+
     </>
   );
 };

@@ -1,9 +1,9 @@
 .LoginContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-
+  
   img {
-    height: 90vh;
+    height: 100vh;
   }
   form {
     display: flex;
@@ -38,6 +38,7 @@
       border-radius: 8px;
       color: #fff;
       border: none;
+      cursor: pointer;
     }
     h3 {
       font-family: "Roboto";

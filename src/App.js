@@ -1,6 +1,5 @@
 import { RouterProvider } from 'react-router-dom';
 import './App.css';
-import Footer from './ui/Footer';
 import routes from './routes';
 
 function App() {
@@ -8,7 +7,6 @@ function App() {
   return (
     <>
     <RouterProvider router={routes}/>
-    <Footer/>
     </>
    
 

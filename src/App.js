@@ -1,14 +1,13 @@
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
-import Home from './Components/Home';
 import Footer from './ui/Footer';
-import Header from './ui/Header';
+import routes from './routes';
 
 function App() {
   document.title="Holidaze"
   return (
     <>
-     <Header/>
-     <Home/>
+    <RouterProvider router={routes}/>
     <Footer/>
     </>
    

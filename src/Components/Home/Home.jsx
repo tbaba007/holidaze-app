@@ -10,6 +10,7 @@ import cultureImage from '../../assets/images/Culture.svg';
 import beachImage from '../../assets/images/Beach.svg';
 import outdoorImage from '../../assets/images/Outdoor.svg';
 import Venue from "../Venues";
+import Header from "../../ui/Header";
 
 const bookingUrls = [
   {
@@ -37,6 +38,8 @@ const Home = () => {
   document.title = "Home";
   return (
     <>
+     <Header/>
+
       <div className={HomepageStyles}>
         <img src={HomeImage} alt="HomeImage" className={HomepageStyles.image} />
         <div className={HomepageStyles.headerText}>

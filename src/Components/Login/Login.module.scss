@@ -1,0 +1,71 @@
+.LoginContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  img {
+    height: 90vh;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    input {
+      width: 430px;
+      height: 60px;
+      border-radius: 6px;
+      bottom: 65.7%;
+      border: 1px solid grey;
+    }
+    section {
+      display: flex;
+      flex-direction: column;
+      margin-top: 50px;
+    }
+    span {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 166.5%;
+      margin-top: -30px;
+      color: #4c5b63;
+    }
+
+    button {
+      width: 430px;
+      background: #4c5b63;
+      margin-top: 30px;
+      height: 69px;
+      border-radius: 8px;
+      color: #fff;
+      border: none;
+    }
+    h3 {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 29px;
+      line-height: 166.5%;
+      /* or 48px */
+
+      color: #000000;
+    }
+    
+  }
+}
+.remember {
+  display: flex;
+  gap: 120px;
+  margin-top: 20px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 166.5%;
+  color:#4C5B63;
+  :nth-child(2){
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+@import url('../../fonts/fonts.scss');

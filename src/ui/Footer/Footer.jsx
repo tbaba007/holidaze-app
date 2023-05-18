@@ -48,7 +48,6 @@ const Footer = () => {
           <section>
             <label>USEFUL LINKS</label>
             {usefulLinks.map((links) => {
-              // return <Link key={links.id} to={links.path}>{links.title}</Link>
               return <label key={links.id}>{links.title}</label>;
             })}
           </section>

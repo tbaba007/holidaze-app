@@ -5,6 +5,10 @@ import placeIcon from "../../assets/icons/map-pin.svg";
 import searchIcon from "../../assets/icons/search.svg";
 import calendarIcon from "../../assets/icons/calendar.svg";
 import userIcon from "../../assets/icons/user.svg";
+import mountainImage from '../../assets/images/Mountains.svg';
+import cultureImage from '../../assets/images/Culture.svg';
+import beachImage from '../../assets/images/Beach.svg';
+import outdoorImage from '../../assets/images/Outdoor.svg';
 import Venue from "../Venues";
 
 const bookingUrls = [
@@ -20,7 +24,7 @@ const bookingUrls = [
   },
   {
     id: 3,
-    title: " 1 adult,0 children, 1 room",
+    title: "1 adult,0 children, 1 room",
     icon: userIcon,
   },
   {
@@ -69,16 +73,43 @@ const Home = () => {
       </section>
       <Venue />
 
-        <section className={HomepageStyles.subscriberContainer}>
-        <span className={HomepageStyles.subscriberContainer__header}>Subscribe to get the latest<br/>news about us.</span>
-        <br/>
-        <span>Subscribe to get notified about our special offers. Enter your email below.</span>
-       
+      <section className={HomepageStyles.subscriberContainer}>
+        <span className={HomepageStyles.subscriberContainer__header}>
+          Subscribe to get the latest
+          <br />
+          news about us.
+        </span>
+        <br />
+        <span className={HomepageStyles.subscriberContainer__body}>
+          Subscribe to get notified about our special offers. Enter your email
+          below.
+        </span>
+
         <section className={HomepageStyles.subscriberContainer__input}>
-        <input type="email" placeholder="Enter Your Email Address"/>
+          <input type="email" placeholder="Enter Your Email Address" required />{" "}
+          <section
+            className={HomepageStyles.subscriberContainer__input__inputButton}
+          >
+            <Button text="Subscribe"></Button>
+          </section>
         </section>
-        
-        </section>
+      </section>
+
+      <section className={HomepageStyles.browseByCategory}>
+        <div className={HomepageStyles.browseByCategory__one}>
+        <img src={mountainImage} alt="HomeImage"  />
+        </div>
+        <div className={HomepageStyles.browseByCategory__four}>
+        <img src={beachImage} alt="HomeImage"  />
+        </div>
+        <div className={HomepageStyles.browseByCategory__five}>
+        <img src={cultureImage} alt="HomeImage"  />
+        </div>
+        <div className={HomepageStyles.browseByCategory__six}>
+        <img src={outdoorImage} alt="HomeImage"  />
+        </div>
+     
+      </section>
     </>
   );
 };

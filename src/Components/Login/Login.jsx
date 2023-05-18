@@ -3,6 +3,7 @@ import React from 'react';
 
 import loginImg from '../../assets/images/loginImg.svg'
 import loginStyles from './Login.module.scss';
+document.title="Login";
 
 const Login = () => (
   <div className={loginStyles.LoginContainer}>
@@ -60,6 +61,7 @@ const Login = () => (
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.password}
+            required
           />
           {errors.password && touched.password && errors.password}
           </section>

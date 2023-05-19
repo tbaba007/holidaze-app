@@ -1,5 +1,5 @@
 import HomeImage from "../../assets/images/HomeImage.svg";
-import Button from "../../ui/Button/Button";
+import Button from "../../components/Button";
 import HomepageStyles from "./Home.module.scss";
 import placeIcon from "../../assets/icons/map-pin.svg";
 import searchIcon from "../../assets/icons/search.svg";
@@ -9,9 +9,9 @@ import mountainImage from '../../assets/images/Mountains.svg';
 import cultureImage from '../../assets/images/Culture.svg';
 import beachImage from '../../assets/images/Beach.svg';
 import outdoorImage from '../../assets/images/Outdoor.svg';
-import Venue from "../Venues";
-import Header from "../../ui/Header";
-import Footer from "../../ui/Footer";
+import Venue from "../../components/Venues";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const bookingUrls = [
   {

@@ -1,4 +1,4 @@
-import Button from '../Button';
+import Button from "../Button/Button";
 import venueStyles from "./Venue.module.scss";
 import sampleImage from '../../assets/images/sampleImage.svg'
 

@@ -49,6 +49,7 @@ const Login = () => (
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.email}
+            required
           />
           {errors.email && touched.email && errors.email}
           </section>

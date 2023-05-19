@@ -48,11 +48,15 @@
     .container__right{
         display: none;
     }
+    .container__left{
+       margin-top: -1px;
+       margin-left: 20px;
+    }
     .container{
         width: 100%;
-        position: fixed;
         margin-left: 0;
         padding: 10px;
+        height: 5vh;
     }
 }
 

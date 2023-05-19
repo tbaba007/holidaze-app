@@ -9,6 +9,7 @@ import mountainImage from '../../assets/images/Mountains.svg';
 import cultureImage from '../../assets/images/Culture.svg';
 import beachImage from '../../assets/images/Beach.svg';
 import outdoorImage from '../../assets/images/Outdoor.svg';
+import homeImage_mobile from '../../assets/images/homeImg_mobile.svg'
 import Venue from "../../components/Venues";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -43,6 +44,8 @@ const Home = () => {
 
       <div className={HomepageStyles}>
         <img src={HomeImage} alt="HomeImage" className={HomepageStyles.image} />
+        <img src={homeImage_mobile} alt="HomeImage" className={HomepageStyles.homeImage_mobile} />
+
         <div className={HomepageStyles.headerText}>
           <h1>STAY WITH COMFORT</h1>
           <label>Your home away from home where you stay with comfort</label>

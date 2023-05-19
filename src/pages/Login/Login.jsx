@@ -7,7 +7,7 @@ document.title="Login";
 
 const Login = () => (
   <div className={loginStyles.LoginContainer}>
-    <img src={loginImg} alt='LoginImage'/>
+    <img src={loginImg} alt='LoginImage' className={loginStyles.image}/>
     <Formik
       initialValues={{ email: '', password: '' }}
       validate={values => {

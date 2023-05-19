@@ -89,8 +89,46 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    
-    
-   
 }
 
+
+@media only screen and (max-width:600px) {
+    .container__wrapper{
+        display: flex;
+        margin-top: 300px;
+    }  
+    .container{
+        align-items: center;
+        &__header{
+            margin-left: -10px;
+        }
+        &__features{
+            margin-left: 5px;
+            width: 10em;
+            gap: 80px;
+            :nth-child(1){
+                margin-left: 40px;
+            }
+            :nth-child(2){
+                margin-right: 20px;
+            }
+        }
+        &__duration{
+            margin-left: -153px;
+        }
+        &__price{
+            margin-left: -110px;
+        }
+        &__footer{
+            gap: 50px;
+            :nth-child(1){
+                margin-left: -10px;
+                width: 100px!important;
+            }
+            :nth-child(2){
+                margin-left: -20px;
+                width: 100px!important;
+            }
+        }
+    }
+}

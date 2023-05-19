@@ -1,13 +1,15 @@
 .LoginContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   
-  img {
+  &__image {
     height: 100vh;
   }
   form {
     display: flex;
     flex-direction: column;
+    grid-column: 3;
+    margin-right: 100px;
     input {
       width: 430px;
       height: 60px;
@@ -70,15 +72,15 @@
 }
 
 @media only screen and (max-width:600px) {
-  img{
-    display: none;
-  }
+ 
 .LoginContainer{
   display: flex;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-
+  &__image {
+    height: 100vh;
+  }
 }
 
 input{
@@ -95,7 +97,7 @@ label{
   font-size: 10px;
   gap: 70px;
   :nth-child(1){
-    margin-left: 1px;
+    margin-left: 5px;
   }
   :nth-child(2){
     margin-left: 60px;

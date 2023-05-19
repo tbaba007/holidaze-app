@@ -259,17 +259,21 @@
    display: none
   }
   .headerText{
-    margin-top: 80px;
     h1 {
-      line-height: 5px;
+      line-height: 1px;
       align-self: center;
-      width: 7em;
-      margin-left: 39px;
+      width: 10em;
+      white-space: nowrap;
     }
+    label{
+      margin-top: 25px;
+    }
+
    button {
     margin-left: 10px;
     align-self: center;
-    margin-top: 20px;
+    margin-top: 5px;
+    margin-bottom: 30px
   }
   }
 }

@@ -35,6 +35,9 @@
     display: flex;
     gap:20px;
     justify-content: flex-end;
+    img{
+        display: none;
+    }
 }
 .container__drawer{
     float: left;
@@ -46,7 +49,14 @@
         display: none;
     }
     .container__right{
-        display: none;
+        button{
+            display: none;
+        }
+        img{
+            display: block;
+            margin-right: 20px;
+            margin-top: -20px;
+        }
     }
     .container__left{
        margin-top: -1px;

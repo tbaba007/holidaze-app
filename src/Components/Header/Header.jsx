@@ -1,7 +1,29 @@
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import HeaderStyles from './Header.module.scss';
-//import navIcon from '../../assets/icons/drawer.svg'
+import navIcon from '../../assets/icons/drawer.svg'
+const menuList=[
+    {
+        id:1,
+        title:'Explore',
+        path:''
+    },
+    {
+        id:2,
+        title:'Rooms',
+        path:''
+    },
+    {
+        id:3,
+        title:'About Us',
+        path:''
+    },
+    {
+        id:4,
+        title:'List your property',
+        path:''
+    }
+]
 const Header=()=>{
     return (
         <div className={HeaderStyles.container}>
@@ -9,14 +31,16 @@ const Header=()=>{
                 Holidaze
             </div>
             <div className={HeaderStyles.container__middle}>
-               <label>Explore</label>
-               <label>Rooms</label>
-               <label>About Us</label>
-               <label>List your property</label>
+              {
+                menuList.map(menu=>{
+                    return <label key={menu.id}>{menu.title}</label>
+                })
+              }
             </div>
             <div className={HeaderStyles.container__right}>
                <Link to="/login"><button className={HeaderStyles.login}>Login</button></Link>
-               <Button text="Sign Up"></Button>
+               <Link to="/register"><Button text="Sign Up"></Button></Link>
+               <img src={navIcon} alt='navIcon'/>
             </div>
          
         </div>

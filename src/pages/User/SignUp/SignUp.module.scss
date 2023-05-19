@@ -1,0 +1,139 @@
+.Container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    &__image {
+      height: 100vh;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      grid-column: 3;
+      margin-right: 100px;
+
+      :nth-child(8)
+      {
+        width: 430px;
+        background: #fff;
+        margin-top: 30px;
+        height: 69px;
+        border-radius: 8px;
+        color: #4c5b63;
+        border: 1px solid #4c5b63;
+        cursor: pointer;
+      }
+      input {
+        width: 430px;
+        height: 60px;
+        border-radius: 6px;
+        bottom: 65.7%;
+        border: 1px solid grey;
+      }
+      section {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+      }
+      span {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 166.5%;
+        margin-top: -30px;
+        color: #4c5b63;
+      }
+  
+      button {
+        width: 430px;
+        background: #4c5b63;
+        margin-top: 30px;
+        height: 69px;
+        border-radius: 8px;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        
+      }
+
+      &__btnGoogle{
+      
+      }
+      h3 {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 29px;
+        line-height: 166.5%;
+        /* or 48px */
+  
+        color: #000000;
+      }
+      
+    }
+  }
+  .remember {
+    display: flex;
+    gap: 120px;
+    margin-top: 20px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 166.5%;
+    color:#4C5B63;
+    :nth-child(2){
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .googleSignUp{
+    background-color: #fff;
+  }
+  
+  @media only screen and (max-width:600px) {
+   
+  .Container{
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    &__image {
+      height: 100vh;
+    }
+  }
+  
+  input{
+    width: 300px!important;
+    align-items: center;
+    align-self: center;
+  }
+  label{
+    margin-left: 2px
+  }
+  .remember{
+    width: 100px;
+    white-space: nowrap;
+    font-size: 10px;
+    gap: 70px;
+    :nth-child(1){
+      margin-left: 5px;
+    }
+    :nth-child(2){
+      margin-left: 60px;
+    }
+  }
+   h3, span{
+    align-items: center;
+    align-self: center;
+   }
+   button{
+    width: 300px!important;
+    align-items: center;
+    align-self: center;
+   }
+  }
+  
+  @import url('../../../assets/fonts/fonts.scss');
+  

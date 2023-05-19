@@ -1,15 +1,15 @@
 import { Formik } from 'formik';
 import React from 'react';
 
-import loginImg from '../../assets/images/loginImg.svg'
-import loginStyles from './Login.module.scss';
+import signUpImg from '../../../assets/images/signupimg.svg'
+import signUpStyles from './SignUp.module.scss';
 document.title="Login";
 
-const Login = () => (
-  <div className={loginStyles.LoginContainer}>
-    <img src={loginImg} alt='LoginImage' className={loginStyles.image}/>
+const Signup = () => (
+  <div className={signUpStyles.Container}>
+    <img src={signUpImg} alt='SignUpImage' className={signUpStyles.image}/>
     <Formik
-      initialValues={{ email: '', password: '' }}
+      initialValues={{ email: '', password: '',name:'',avatar:'' }}
       validate={values => {
         const errors = {};
         if (!values.email) {
@@ -38,14 +38,27 @@ const Login = () => (
         isSubmitting,
       }) => (
         <form onSubmit={handleSubmit}>
-         <h3>Welcome back</h3>
-          <span>Welcome back! Please enter your details</span>
+         <h3>Create an Account</h3>
+          <span>Became holidaze member ,you’ll get exlusive offers from holidaze</span>
+          <section>
+          <label>Name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.name}
+            required
+          />
+          {errors.name && touched.name && errors.name}
+          </section>
           <section>
           <label>Email</label>
           <input
             type="email"
             name="email"
-            placeholder="Enter Email"
+            placeholder='Enter email'
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.email}
@@ -58,7 +71,7 @@ const Login = () => (
           <input
             type="password"
             name="password"
-            placeholder='Enter Password'
+            placeholder='create a password'
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.password}
@@ -66,17 +79,31 @@ const Login = () => (
           />
           {errors.password && touched.password && errors.password}
           </section>
-          <div className={loginStyles.remember}>
-          <label>Remember for 30days</label>
-          <label>forgot password</label>
-          </div>
+          <section>
+          <label>Avatar</label>
+          <input
+            type="text"
+            name="avatar"
+            placeholder='Avatar url'
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.avatar}
+            required
+          />
+          {errors.avatar && touched.avatar && errors.avatar}
+          </section>
+          
           <button type="submit" disabled={isSubmitting}>
-            Log in
+           Create an Account
+          </button>
+          <button type="button">
+           Sign Up with Google
           </button>
         </form>
       )}
     </Formik>
+   
   </div>
 );
 
-export default Login;
+export default Signup;

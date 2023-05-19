@@ -1,15 +1,16 @@
 import { Formik } from 'formik';
 import React from 'react';
-
 import signUpImg from '../../../assets/images/signupimg.svg'
 import signUpStyles from './SignUp.module.scss';
-document.title="Login";
+import { registerUser } from '../../../services';
+import { ToastContainer, toast } from 'react-toastify';
+document.title="Register";
 
 const Signup = () => (
   <div className={signUpStyles.Container}>
     <img src={signUpImg} alt='SignUpImage' className={signUpStyles.image}/>
     <Formik
-      initialValues={{ email: '', password: '',name:'',avatar:'' }}
+      initialValues={{ email: '', password: '',name:'',avatar:'',venueManager: true }}
       validate={values => {
         const errors = {};
         if (!values.email) {
@@ -19,13 +20,26 @@ const Signup = () => (
         ) {
           errors.email = 'Invalid email address';
         }
+        if(!values.password){
+          errors.password = 'Required';
+        }
+        else if(values.password.length<8){
+          errors.password = 'Password must be 8 characters and above';
+        }
         return errors;
       }}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+       onSubmit={async (values, { setSubmitting }) => {
+        setSubmitting(true);
+         const data=await registerUser({payload:values});
+        if(data && data?.id>0){
+          setTimeout(()=>{
+            toast.success('User created successfully');
+            toast.info('Please wait, redirecting to login')
+          },4000)
+        }
+        else{
+          toast.error('An error occured while registering');
+        }
       }}
     >
       {({
@@ -88,7 +102,7 @@ const Signup = () => (
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.avatar}
-            required
+            
           />
           {errors.avatar && touched.avatar && errors.avatar}
           </section>
@@ -102,7 +116,7 @@ const Signup = () => (
         </form>
       )}
     </Formik>
-   
+   <ToastContainer/>
   </div>
 );
 

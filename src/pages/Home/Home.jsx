@@ -1,3 +1,4 @@
+import { lazy, useEffect, useState } from 'react';
 import HomeImage from "../../assets/images/HomeImage.svg";
 import Button from "../../components/Button";
 import HomepageStyles from "./Home.module.scss";
@@ -10,10 +11,11 @@ import cultureImage from '../../assets/images/Culture.svg';
 import beachImage from '../../assets/images/Beach.svg';
 import outdoorImage from '../../assets/images/Outdoor.svg';
 import homeImage_mobile from '../../assets/images/homeImg_mobile.svg'
-import Venue from "../../components/Venues";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import { getVenueList } from '../../services';
 
+const Venue=lazy(()=>import('../../components/Venues'))
 const bookingUrls = [
   {
     id: 1,
@@ -38,6 +40,14 @@ const bookingUrls = [
 ];
 const Home = () => {
   document.title = "Home";
+  const [venueList,setVenueList]=useState([])
+  useEffect(()=>{
+   const getVenues=async()=>{
+        const response=await getVenueList();
+        setVenueList(response)
+   };
+   getVenues();
+  },[])
   return (
     <>
      <Header/>
@@ -78,7 +88,7 @@ const Home = () => {
         </section>
         <div className={HomepageStyles.venuHeader__right}>View all items</div>
       </section>
-      <Venue />
+      <Venue venuList={venueList}  />
 
       <section className={HomepageStyles.subscriberContainer}>
         <span className={HomepageStyles.subscriberContainer__header}>

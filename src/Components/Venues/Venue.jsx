@@ -29,15 +29,16 @@ const stubVenue = [
   },
   
 ];
-const Venue = () => {
+
+const Venue = ({venuList}) => {
   return (
     <>
       <section className={venueStyles.container__wrapper}>
-        {stubVenue.map((item) => {
+        {venuList.slice(7,10).map((item) => {
           return (
             <section className={venueStyles.container} key={item.id}>
-                <img src={item.image} alt={item.id+item.image} className={venueStyles.container__img}/>
-              <label className={venueStyles.container__header}>
+                <img src={item?.media[0]} alt={item?.media[0]} className={venueStyles.container__img}/>
+              {/* <label className={venueStyles.container__header}>
                 {item.address}
               </label>
               <label className={venueStyles.container__duration}>
@@ -52,7 +53,7 @@ const Venue = () => {
               </section>
               <label className={venueStyles.container__price}>
                 {item.price}
-              </label>
+              </label> */}
               <section className={venueStyles.container__footer}>
                 <button className={venueStyles.container__viewDetails}>View Details</button>
                 <Button text="Book Now"></Button>

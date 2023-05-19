@@ -1,11 +1,11 @@
 import { lazy, Suspense } from "react"
 import { createBrowserRouter,Navigate } from "react-router-dom"
-import Loading from "./components/Loading/Loading"
+import Loading from "../components/Loading/Loading"
 
-const Home = lazy(() => import("./pages/Home"))
-const Login = lazy(() => import("./pages/User/Login"))
-const NotFound = lazy(() => import("./pages/NotFound"))
-const SignUp=lazy(()=>import('./pages/User/SignUp'))
+const Home = lazy(() => import("../pages/Home"))
+const Login = lazy(() => import("../pages/User/Login"))
+const NotFound = lazy(() => import("../pages/NotFound"))
+const SignUp=lazy(()=>import('../pages/User/SignUp'))
 
 const isAuthenticated=localStorage.getItem('user');
 

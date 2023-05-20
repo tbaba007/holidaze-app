@@ -2,7 +2,10 @@ import { Formik } from 'formik';
 import React from 'react';
 
 import loginImg from '../../../assets/images/loginImg.svg'
+import { signinUser } from '../../../services';
 import loginStyles from './Login.module.scss';
+import { toast } from 'react-toastify';
+
 document.title="Login";
 
 const Login = () => (
@@ -21,11 +24,16 @@ const Login = () => (
         }
         return errors;
       }}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+      const onSubmit={async(values, { setSubmitting }) => {
+        const isUserAuthenticated=await signinUser({payload:values});
+        if(isUserAuthenticated && isUserAuthenticated?.accessToken){
+          document.cookie=isUserAuthenticated?.accessToken;
+          localStorage.setItem('user',JSON.stringify(isUserAuthenticated))
+        }
+        else{
+            const {errors}=isUserAuthenticated;
+            toast.error(errors[0]?.message);
+        }
       }}
     >
       {({
@@ -76,6 +84,7 @@ const Login = () => (
         </form>
       )}
     </Formik>
+   
   </div>
 );
 

@@ -4,6 +4,7 @@ import signUpImg from '../../../assets/images/signupimg.svg'
 import signUpStyles from './SignUp.module.scss';
 import { registerUser } from '../../../services';
 import { ToastContainer, toast } from 'react-toastify';
+import { Navigate } from 'react-router-dom';
 document.title="Register";
 
 const Signup = () => (
@@ -32,13 +33,16 @@ const Signup = () => (
         setSubmitting(true);
          const data=await registerUser({payload:values});
         if(data && data?.id>0){
+          toast.success('User created successfully');
+          toast.info('Please wait, redirecting to login');
           setTimeout(()=>{
-            toast.success('User created successfully');
-            toast.info('Please wait, redirecting to login')
+           <Navigate to="/login" replace/>
+            
           },4000)
         }
         else{
-          toast.error('An error occured while registering');
+          const {errors}=data;
+          toast.error(errors[0]?.message);
         }
       }}
     >

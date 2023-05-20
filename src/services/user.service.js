@@ -5,5 +5,5 @@ export const registerUser=async ({payload})=>{
 }
 
 export const signinUser=async({payload})=>{
-    return await apiFetch({path:'/auth/login',data:payload,method:'POST'})
+    return await apiFetch({path:'auth/login',data:payload,method:'POST'})
 }

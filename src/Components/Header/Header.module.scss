@@ -30,13 +30,16 @@
 }
 
 .container__right{
-    margin-top: 10px;
+    margin-top: 15px;
     width: 500px;
     display: flex;
     gap:20px;
     justify-content: flex-end;
-    img{
+    &__navimg{
         display: none;
+    }
+    label{
+        margin-top: 10px;
     }
 }
 .container__drawer{
@@ -52,7 +55,7 @@
         button{
             display: none;
         }
-        img{
+        &__navimg{
             display: block;
             margin-right: 20px;
             margin-top: -20px;

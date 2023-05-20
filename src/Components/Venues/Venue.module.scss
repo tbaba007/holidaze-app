@@ -103,11 +103,16 @@
     .container__wrapper{
         display: flex;
         margin-top: 300px;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+        width: 100%;
     }  
     .container{
         align-items: center;
         &__header{
-            margin-left: -10px;
+            margin-left: -200px;
         }
         &__features{
             margin-left: 5px;
@@ -124,7 +129,7 @@
             margin-left: -153px;
         }
         &__price{
-            margin-left: -110px;
+            margin-left: 50px;
         }
         &__footer{
             gap: 50px;
@@ -136,6 +141,17 @@
                 margin-left: -20px;
                 width: 100px!important;
             }
+        }
+        &__img{
+            max-width: 30em;
+            width: auto;
+            height: auto;
+            max-height: 300px;
+            justify-content: center;
+            justify-self: center;
+            text-align: center;
+
+            
         }
     }
 }

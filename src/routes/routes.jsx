@@ -1,20 +1,22 @@
 import { lazy, Suspense } from "react"
-import { createBrowserRouter,Navigate } from "react-router-dom"
-import Loading from "../components/Loading/Loading"
 
+import { createBrowserRouter, Navigate } from "react-router-dom"
+const Loading=lazy(()=>import('../components/ui/Loading/Loading'));
 const Home = lazy(() => import("../pages/Home"))
 const Login = lazy(() => import("../pages/User/Login"))
 const NotFound = lazy(() => import("../pages/NotFound"))
 const SignUp=lazy(()=>import('../pages/User/SignUp'))
+const ViewDetails=lazy(()=>import('../pages/VenueDetails'))
 
 const isAuthenticated=localStorage.getItem('user');
 
 const RouteGuard=(props)=>{
-    const {component:Component,...rest}=props;
+    const {children}=props;
+    debugger;
     if(!isAuthenticated){
         return <Navigate to="/login" replace/>
     }
-    return <Component {...rest}/>
+    return children
 }
 
 const routes = createBrowserRouter([
@@ -47,6 +49,16 @@ const routes = createBrowserRouter([
     element: (
       <Suspense fallback={<Loading />}>
         <SignUp />
+      </Suspense>
+    )
+  },
+  {
+    path:'/details/:id',
+    element:(
+      <Suspense>
+        <RouteGuard>
+        <ViewDetails/>
+        </RouteGuard>
       </Suspense>
     )
   }

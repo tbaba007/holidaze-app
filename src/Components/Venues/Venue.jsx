@@ -1,4 +1,4 @@
-import Button from '../Button';
+import Button from '../ui/Button';
 import venueStyles from "./Venue.module.scss";
 
 const Venue = ({venuList}) => {
@@ -18,10 +18,10 @@ const Venue = ({venuList}) => {
               <label className={venueStyles.container__header}>
               &nbsp;  &nbsp;{address.toString()?.concat(','+city).toString()?.concat(','+country)}
               </label>
-              {/* <label className={venueStyles.container__duration}>
-                {item.duration}
-              </label> */}
-              {/* <section className={venueStyles.container__features}>
+              <label className={venueStyles.container__duration}>
+                {/* {item.duration} */}
+              </label> 
+               {/* <section className={venueStyles.container__features}>
                 {
                     item.features.split(' ').map((features,index)=>{
                         return <label key={index+features}>{features}</label>

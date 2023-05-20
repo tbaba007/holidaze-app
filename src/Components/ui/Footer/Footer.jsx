@@ -1,3 +1,6 @@
+import facebookIcon from '../../../assets/icons/facebook.svg';
+import instagramIcon from '../../../assets/icons/instagram.svg';
+import twitterIcon from '../../../assets/icons/twitter.svg';
 import footerStyles from './Footer.module.scss';
 
 const usefulLinks = [
@@ -55,9 +58,9 @@ const Footer = () => {
           <section>
             <label>SOCIALS</label>
             <div className={footerStyles.socials}>
-              <p>Facebook</p>
-              <p>Twitter</p>
-              <p>Instagram</p>
+              <img src={facebookIcon} alt='fb'/>
+              <img src={twitterIcon} alt='twitter'/>
+              <img src={instagramIcon} alt='instagram'/>
             </div>
           </section>
 

@@ -1,25 +1,23 @@
 import { lazy, useEffect, useState } from "react"
-import HomeImage from "../../assets/images/HomeImage.svg"
-import Button from "../../components/Button"
-import HomepageStyles from "./Home.module.scss"
 
-import mountainImage from "../../assets/images/Mountains.svg"
-import cultureImage from "../../assets/images/Culture.svg"
 import beachImage from "../../assets/images/Beach.svg"
-import outdoorImage from "../../assets/images/Outdoor.svg"
+import cultureImage from "../../assets/images/Culture.svg"
+import HomeImage from "../../assets/images/HomeImage.svg"
 import homeImage_mobile from "../../assets/images/homeImg_mobile.svg"
-import Header from "../../components/Header"
-import Footer from "../../components/Footer"
-import HomepageFooter from "./HomepageFooter"
+import mountainImage from "../../assets/images/Mountains.svg"
+import outdoorImage from "../../assets/images/Outdoor.svg"
+import Button from "../../components/ui/Button"
+import Footer from "../../components/ui/Footer"
+import Header from "../../components/ui/Header"
 import { getVenueList } from "../../services"
-import { useLocalStorage } from "../../hooks/useLocalStorage"
+import HomepageStyles from "./Home.module.scss"
+import HomepageFooter from "./HomepageFooter"
 
 const Venue = lazy(() => import("../../components/Venues"))
 
 const Home = () => {
   document.title = "Home"
   const [venueList, setVenueList] = useState([])
-  const user = useLocalStorage("user")
   useEffect(() => {
     const getVenues = async () => {
       const response = await getVenueList()
@@ -32,8 +30,7 @@ const Home = () => {
       <Header />
 
       <div className={HomepageStyles}>
-        {!user[0] && (
-          <>
+        
             <img
               src={HomeImage}
               alt="HomeImage"
@@ -52,12 +49,10 @@ const Home = () => {
               </label>
               <Button text="Book Now">Book Now</Button>
             </div>
-          </>
-        )}
+          
+        
       </div>
-      <div className={user[0] && HomepageStyles.venuHeader__loggedIn}>
         <HomepageFooter />
-      </div>
       <section className={HomepageStyles.venuHeader}>
         <section className={HomepageStyles.venuHeader__left}>
           Featured Venures
@@ -65,12 +60,9 @@ const Home = () => {
         </section>
         <div className={HomepageStyles.venuHeader__right}>View all items</div>
       </section>
-      <div className={user[0] && HomepageStyles.venues__loggedIn}>
         <Venue venuList={venueList} />
-      </div>
 
-          {!user[0] &&
-          <>
+         
       <section className={HomepageStyles.subscriberContainer}>
         <span className={HomepageStyles.subscriberContainer__header}>
           Subscribe to get the latest
@@ -107,8 +99,8 @@ const Home = () => {
           <img src={outdoorImage} alt="OutdoorImage" />
         </div>
       </section>
-      </>
-}
+      
+
       <Footer />
     </>
   )

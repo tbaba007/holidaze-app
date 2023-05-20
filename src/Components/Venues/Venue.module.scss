@@ -14,7 +14,7 @@
         color:#081229;
         font-weight: 600;
         font-size: 16px;
-        
+        margin-left: 30px;
        
     }
 
@@ -61,6 +61,7 @@
         color:#081229;
         font-weight: 700;
         font-size: 20px;
+        margin-left: 30px;
         
     }
 
@@ -75,7 +76,7 @@
     }
 
     &__img{
-        max-width: 310px;
+        max-width: 300px;
         margin-left: 20px;
         width: auto;
         height: auto;
@@ -92,7 +93,7 @@
     justify-content: center;
     margin-left: -100px;
    :nth-child(1){
-    margin-left: 30px;
+    margin-left: 40px;
    }
     
 }

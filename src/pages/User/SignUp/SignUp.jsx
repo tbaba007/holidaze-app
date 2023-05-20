@@ -4,11 +4,13 @@ import signUpImg from '../../../assets/images/signupimg.svg'
 import signUpStyles from './SignUp.module.scss';
 import { registerUser } from '../../../services';
 import { ToastContainer, toast } from 'react-toastify';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 document.title="Register";
 
-const Signup = () => (
-  <div className={signUpStyles.Container}>
+const Signup = () => {
+  const navigate=useNavigate();
+  return (
+    <div className={signUpStyles.Container}>
     <img src={signUpImg} alt='SignUpImage' className={signUpStyles.image}/>
     <Formik
       initialValues={{ email: '', password: '',name:'',avatar:'',venueManager: true }}
@@ -36,8 +38,7 @@ const Signup = () => (
           toast.success('User created successfully');
           toast.info('Please wait, redirecting to login');
           setTimeout(()=>{
-           <Navigate to="/login" replace/>
-            
+           navigate('/')
           },4000)
         }
         else{
@@ -122,6 +123,8 @@ const Signup = () => (
     </Formik>
    <ToastContainer/>
   </div>
-);
+  )
+ 
+}
 
 export default Signup;

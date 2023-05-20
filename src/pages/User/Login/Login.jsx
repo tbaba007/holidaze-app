@@ -4,12 +4,15 @@ import React from 'react';
 import loginImg from '../../../assets/images/loginImg.svg'
 import { signinUser } from '../../../services';
 import loginStyles from './Login.module.scss';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 document.title="Login";
 
-const Login = () => (
-  <div className={loginStyles.LoginContainer}>
+const Login = () => {
+  const navigate=useNavigate();
+  return (
+    <div className={loginStyles.LoginContainer}>
     <img src={loginImg} alt='LoginImage' className={loginStyles.image}/>
     <Formik
       initialValues={{ email: '', password: '' }}
@@ -29,6 +32,7 @@ const Login = () => (
         if(isUserAuthenticated && isUserAuthenticated?.accessToken){
           document.cookie=isUserAuthenticated?.accessToken;
           localStorage.setItem('user',JSON.stringify(isUserAuthenticated))
+         return navigate('/');
         }
         else{
             const {errors}=isUserAuthenticated;
@@ -84,8 +88,10 @@ const Login = () => (
         </form>
       )}
     </Formik>
-   
+   <ToastContainer/>
   </div>
-);
+  )
+ 
+}
 
 export default Login;

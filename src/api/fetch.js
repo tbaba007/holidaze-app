@@ -4,7 +4,6 @@ const token=document.cookie
 
 export const apiFetch=async({path,method,data})=>{
     try{
-        debugger;
         const response=await fetch(`${baseUrl}/${path}`,{
             method:method,
             headers:{

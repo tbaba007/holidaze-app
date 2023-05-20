@@ -1,85 +1,62 @@
-import { lazy, useEffect, useState } from 'react';
-import HomeImage from "../../assets/images/HomeImage.svg";
-import Button from "../../components/Button";
-import HomepageStyles from "./Home.module.scss";
-import placeIcon from "../../assets/icons/map-pin.svg";
-import searchIcon from "../../assets/icons/search.svg";
-import calendarIcon from "../../assets/icons/calendar.svg";
-import userIcon from "../../assets/icons/user.svg";
-import mountainImage from '../../assets/images/Mountains.svg';
-import cultureImage from '../../assets/images/Culture.svg';
-import beachImage from '../../assets/images/Beach.svg';
-import outdoorImage from '../../assets/images/Outdoor.svg';
-import homeImage_mobile from '../../assets/images/homeImg_mobile.svg'
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import { getVenueList } from '../../services';
+import { lazy, useEffect, useState } from "react"
+import HomeImage from "../../assets/images/HomeImage.svg"
+import Button from "../../components/Button"
+import HomepageStyles from "./Home.module.scss"
 
-const Venue=lazy(()=>import('../../components/Venues'))
-const bookingUrls = [
-  {
-    id: 1,
-    title: "Where are you going",
-    icon: placeIcon,
-  },
-  {
-    id: 2,
-    title: "Check in date - Check out date",
-    icon: calendarIcon,
-  },
-  {
-    id: 3,
-    title: "1 adult,0 children, 1 room",
-    icon: userIcon,
-  },
-  {
-    id: 4,
-    title: "Search",
-    icon: searchIcon,
-  },
-];
+import mountainImage from "../../assets/images/Mountains.svg"
+import cultureImage from "../../assets/images/Culture.svg"
+import beachImage from "../../assets/images/Beach.svg"
+import outdoorImage from "../../assets/images/Outdoor.svg"
+import homeImage_mobile from "../../assets/images/homeImg_mobile.svg"
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
+import HomepageFooter from "./HomepageFooter"
+import { getVenueList } from "../../services"
+import { useLocalStorage } from "../../hooks/useLocalStorage"
+
+const Venue = lazy(() => import("../../components/Venues"))
+
 const Home = () => {
-  document.title = "Home";
-  const [venueList,setVenueList]=useState([])
-  useEffect(()=>{
-   const getVenues=async()=>{
-        const response=await getVenueList();
-        setVenueList(response)
-   };
-   getVenues();
-  },[])
+  document.title = "Home"
+  const [venueList, setVenueList] = useState([])
+  const user = useLocalStorage("user")
+  useEffect(() => {
+    const getVenues = async () => {
+      const response = await getVenueList()
+      setVenueList(response)
+    }
+    getVenues()
+  }, [])
   return (
     <>
-     <Header/>
+      <Header />
 
       <div className={HomepageStyles}>
-        <img src={HomeImage} alt="HomeImage" className={HomepageStyles.image} />
-        <img src={homeImage_mobile} alt="HomeImage" className={HomepageStyles.homeImage_mobile} />
+        {!user[0] && (
+          <>
+            <img
+              src={HomeImage}
+              alt="HomeImage"
+              className={HomepageStyles.image}
+            />
+            <img
+              src={homeImage_mobile}
+              alt="HomeImage"
+              className={HomepageStyles.homeImage_mobile}
+            />
 
-        <div className={HomepageStyles.headerText}>
-          <h1>STAY WITH COMFORT</h1>
-          <label>Your home away from home where you stay with comfort</label>
-          <Button text="Book Now">Book Now</Button>
-        </div>
-      </div>
-      <div className={HomepageStyles.banner__footer}>
-        {bookingUrls.map((item) => {
-          return (
-            <div
-              id={item.id}
-              className={HomepageStyles.banner__footer__container}
-            >
-              {
-                <img
-                  src={item.icon}
-                  alt={item.title}
-                  className={HomepageStyles.banner__footer__container__img}
-                />
-              }
-              {item.title}
+            <div className={HomepageStyles.headerText}>
+              <h1>STAY WITH COMFORT</h1>
+              <label>
+                Your home away from home where you stay with comfort
+              </label>
+              <Button text="Book Now">Book Now</Button>
             </div>
-          );
-        })}
+          </>
+        )}
+      </div>
+      <div className={user[0] && HomepageStyles.venuHeader__loggedIn}>
+        <HomepageFooter />
       </div>
       <section className={HomepageStyles.venuHeader}>
         <section className={HomepageStyles.venuHeader__left}>
@@ -88,8 +65,12 @@ const Home = () => {
         </section>
         <div className={HomepageStyles.venuHeader__right}>View all items</div>
       </section>
-      <Venue venuList={venueList}  />
+      <div className={user[0] && HomepageStyles.venues__loggedIn}>
+        <Venue venuList={venueList} />
+      </div>
 
+          {!user[0] &&
+          <>
       <section className={HomepageStyles.subscriberContainer}>
         <span className={HomepageStyles.subscriberContainer__header}>
           Subscribe to get the latest
@@ -111,26 +92,26 @@ const Home = () => {
           </section>
         </section>
       </section>
-
+          
       <section className={HomepageStyles.browseByCategory}>
         <div className={HomepageStyles.browseByCategory__one}>
-        <img src={mountainImage} alt="HomeImage"  />
+          <img src={mountainImage} alt="MountainImage" />
         </div>
         <div className={HomepageStyles.browseByCategory__four}>
-        <img src={beachImage} alt="HomeImage"  />
+          <img src={beachImage} alt="BeachImage" />
         </div>
         <div className={HomepageStyles.browseByCategory__five}>
-        <img src={cultureImage} alt="HomeImage"  />
+          <img src={cultureImage} alt="CultureImage" />
         </div>
         <div className={HomepageStyles.browseByCategory__six}>
-        <img src={outdoorImage} alt="HomeImage"  />
+          <img src={outdoorImage} alt="OutdoorImage" />
         </div>
-     
       </section>
-    <Footer/>
-
+      </>
+}
+      <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

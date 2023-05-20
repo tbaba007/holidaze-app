@@ -2,7 +2,7 @@
   width: 100%;
   margin-top: 82px;
 }
-.homeImage_mobile{
+.homeImage_mobile {
   display: none;
 }
 .headerText {
@@ -115,6 +115,17 @@
     color: #000000;
   }
 }
+.venuHeader__loggedIn {
+  position: absolute;
+  left: 49.3%;
+  top: -40%;
+}
+
+.venues__loggedIn {
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
 .subscriberContainer {
   display: flex;
   flex-direction: column;
@@ -149,7 +160,7 @@
     flex-direction: row;
     margin-top: 20px;
     position: relative;
-    
+
     input[type="email"] {
       width: 500px;
       height: 50px;
@@ -157,8 +168,8 @@
       border-radius: 8px;
       border: none;
       outline: none;
-   }
-    &__inputButton{
+    }
+    &__inputButton {
       transform: translateX(2px);
       position: absolute;
       right: 0;
@@ -167,9 +178,9 @@
   }
 }
 
-.browseByCategory{
+.browseByCategory {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   align-items: center;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -178,38 +189,38 @@
   &__one {
     grid-column: 2 / 3;
     grid-row: 1;
-   img{
-    width: 20em;
-    height: 100%;
-   }
+    img {
+      width: 20em;
+      height: 100%;
+    }
   }
   &__four {
     grid-column: 3;
     grid-row: 1;
     margin-top: -170px;
-    img{
+    img {
       width: 20em;
       height: 100%;
-     }
+    }
   }
   &__five {
     grid-column: 3;
     grid-row: 1;
     margin-top: 190px;
-    img{
+    img {
       width: 10em;
       height: 100%;
-     }
+    }
   }
   &__six {
     grid-column: 3;
     grid-row: 1;
     margin-left: 165px;
     margin-top: 190px;
-    img{
+    img {
       width: 10em;
       height: 100%;
-     }
+    }
   }
 }
 @media only screen and (max-width: 769px) {
@@ -218,65 +229,65 @@
   }
 }
 
-@media only screen and (max-width:768px) {
-  .banner__footer{
+@media only screen and (max-width: 768px) {
+  .banner__footer {
     display: flex;
     flex-direction: column;
     top: -4%;
     width: 80%;
     margin-left: 20px;
-    :nth-child(1){
-    z-index: 999;
+    
+    :nth-child(1) {
+      z-index: 999;
     }
-    :nth-child(2){
-      width: 280px
+    :nth-child(2) {
+      width: 280px;
     }
-    :nth-child(4){
-      width: 300px
-    }
-    &__container{
+    :nth-child(4) {
       width: 300px;
-     font-size: 10px
+    }
+    &__container {
+      width: 300px;
+      font-size: 10px;
     }
   }
   .image {
-   display: none
+    display: none;
   }
-  .homeImage_mobile{
+  .homeImage_mobile {
     display: block;
     width: 100%;
   }
 
-  .browseByCategory{
+  .browseByCategory {
     display: flex;
     flex-direction: column;
-    display: none
+    display: none;
   }
-  .venuHeader{
-      display: none
+  .venuHeader {
+    display: none;
   }
-  .subscriberContainer{
-   display: none
+  .subscriberContainer {
+    display: none;
   }
-  .headerText{
+  .headerText {
     h1 {
       line-height: 1px;
       align-self: center;
       width: 10em;
       white-space: nowrap;
     }
-    label{
+    label {
       margin-top: 25px;
     }
 
-   button {
-    margin-left: 10px;
-    align-self: center;
-    margin-top: 5px;
-    margin-bottom: 30px
-  }
+    button {
+      margin-left: 10px;
+      align-self: center;
+      margin-top: 5px;
+      margin-bottom: 30px;
+    }
   }
 }
 
-
-@import url('../../assets/fonts/fonts.scss');
+@import url("../../assets/fonts/fonts.scss");

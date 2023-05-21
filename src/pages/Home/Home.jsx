@@ -6,14 +6,14 @@ import HomeImage from "../../assets/images/HomeImage.svg"
 import homeImage_mobile from "../../assets/images/homeImg_mobile.svg"
 import mountainImage from "../../assets/images/Mountains.svg"
 import outdoorImage from "../../assets/images/Outdoor.svg"
-import Button from "../../components/ui/Button"
-import Footer from "../../components/ui/Footer"
-import Header from "../../components/ui/Header"
+import Button from "../../Components/ui/Button"
+import Footer from "../../Components/ui/Footer"
+import Header from "../../Components/ui/Header"
 import { getVenueList } from "../../services"
 import HomepageStyles from "./Home.module.scss"
 import HomepageFooter from "./HomepageFooter"
 
-const Venue = lazy(() => import("../../components/Venues"))
+const Venue = lazy(() => import("../../Components/Venues"))
 
 const Home = () => {
   document.title = "Home"

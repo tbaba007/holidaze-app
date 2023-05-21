@@ -1,5 +1,5 @@
-import Footer from "../../components/ui/Footer";
-import Header from "../../components/ui/Header";
+import Footer from "../../Components/ui/Footer";
+import Header from "../../Components/ui/Header";
 
 const ViewDetails=()=>{
     return (

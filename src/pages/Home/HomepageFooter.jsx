@@ -32,7 +32,7 @@ const HomepageFooter=()=>{
         {bookingUrls.map((item) => {
           return (
             <div
-              id={item.id}
+              key={item.id}
               className={HomepageStyles.banner__footer__container}
             >
               {

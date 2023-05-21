@@ -83,7 +83,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
-  width: 60em;
+  width: 75em;
   &__left {
     font-family: "Inter";
     margin-left: -30px;
@@ -94,6 +94,7 @@
     color: rgba(0, 0, 0, 0.65);
     display: flex;
     flex-direction: column;
+    margin-left: -20px;
     :nth-child(1) {
       font-family: "Inter";
       font-style: normal;
@@ -111,7 +112,7 @@
     font-size: 19px;
     line-height: 23px;
     /* identical to box height */
-
+    margin-right: 20px;
     color: #000000;
   }
 }
@@ -223,20 +224,15 @@
     }
   }
 }
-@media only screen and (max-width: 769px) {
-  .banner__footer {
-    margin-top: 65vh;
-  }
-}
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
   .banner__footer {
     display: flex;
     flex-direction: column;
-    top: -4%;
-    width: 80%;
-    margin-left: 20px;
-    
+    align-items: center;
+    align-self: center;
+    align-content: center;   
+    margin-top: 420px; 
     :nth-child(1) {
       z-index: 999;
     }
@@ -272,14 +268,12 @@
   }
   .headerText {
     h1 {
-      line-height: 1px;
-      align-self: center;
       width: 10em;
       white-space: nowrap;
+      margin-top: -250px;
+      margin-left: -20px;
     }
-    label {
-      margin-top: 25px;
-    }
+   
 
     button {
       margin-left: 10px;
@@ -289,5 +283,76 @@
     }
   }
 }
+
+
+@media screen and (max-width:744px) and (min-width:601px) {
+  .headerText{
+    margin-top: -220px;
+    h1{
+      white-space: nowrap;
+    }
+  }
+}
+
+@media screen and (min-width:745px) and (max-width:1920px) {
+  .banner__footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    align-content: center;   
+    margin-top:32%; 
+    :nth-child(1) {
+      z-index: 999;
+    }
+    :nth-child(2) {
+      width: 280px;
+    }
+    :nth-child(4) {
+      width: 300px;
+    }
+    &__container {
+      width: 300px;
+      font-size: 10px;
+    }
+  }
+  .venuHeader{
+    // display: none;
+  }
+  .headerText{
+    margin-top: -150px
+  }
+}
+
+// @media screen and (min-width:900px) and (max-width:1920px) {
+//   .banner__footer {
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     align-self: center;
+//     align-content: center;  
+//     margin-top: 550px; 
+//     :nth-child(1) {
+//       z-index: 999;
+//     }
+//     :nth-child(2) {
+//       width: 280px;
+//     }
+//     :nth-child(4) {
+//       width: 300px;
+//     }
+//     &__container {
+//       width: 300px;
+//       font-size: 10px;
+//     }
+//   }
+//   .venuHeader{
+//     display: flex;
+//     justify-content: space-between;
+//   }
+//   .headerText{
+//     margin-top: -100px
+//   }
+// }
 
 @import url("../../assets/fonts/fonts.scss");

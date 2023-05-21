@@ -29,7 +29,7 @@ const menuList=[
 ]
 const Header=()=>{
     const isUserLoggedIn=useLocalStorage('user');
-    debugger;
+    
     return (
         <div className={HeaderStyles.container}>
             <div className={HeaderStyles.container__left}>

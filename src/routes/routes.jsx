@@ -12,7 +12,7 @@ const isAuthenticated=localStorage.getItem('user');
 
 const RouteGuard=(props)=>{
     const {children}=props;
-    debugger;
+    
     if(!isAuthenticated){
         return <Navigate to="/login" replace/>
     }

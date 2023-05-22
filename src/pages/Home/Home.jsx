@@ -28,18 +28,13 @@ const Home = () => {
       <Header />
 
       <div className={HomepageStyles.HeaderContainer}>
-        
-            <div className={HomepageStyles.headerText}>
-              <h1>STAY WITH COMFORT</h1>
-              <label>
-                Your home away from home where you stay with comfort
-              </label>
-              <Button text="Book Now">Book Now</Button>
-            </div>
-          
-        
+        <div className={HomepageStyles.headerText}>
+          <h1>STAY WITH COMFORT</h1>
+          <label>Your home away from home where you stay with comfort</label>
+          <Button text="Book Now">Book Now</Button>
+        </div>
       </div>
-        <HomepageFooter />
+      <HomepageFooter />
       <section className={HomepageStyles.venuHeader}>
         <section className={HomepageStyles.venuHeader__left}>
           Featured Venures
@@ -47,9 +42,10 @@ const Home = () => {
         </section>
         <div className={HomepageStyles.venuHeader__right}>View all items</div>
       </section>
+      <div className={HomepageStyles.venueList}>
         <Venue venuList={venueList} />
+      </div>
 
-         
       <section className={HomepageStyles.subscriberContainer}>
         <span className={HomepageStyles.subscriberContainer__header}>
           Subscribe to get the latest
@@ -71,7 +67,7 @@ const Home = () => {
           </section>
         </section>
       </section>
-          
+
       <section className={HomepageStyles.browseByCategory}>
         <div className={HomepageStyles.browseByCategory__one}>
           <img src={mountainImage} alt="MountainImage" />
@@ -79,14 +75,27 @@ const Home = () => {
         <div className={HomepageStyles.browseByCategory__four}>
           <img src={beachImage} alt="BeachImage" />
         </div>
-        <div className={HomepageStyles.browseByCategory__five}>
-          <img src={cultureImage} alt="CultureImage" />
-        </div>
-        <div className={HomepageStyles.browseByCategory__six}>
-          <img src={outdoorImage} alt="OutdoorImage" />
-        </div>
+        <table>
+          <thead>
+            <tr>
+            <th>
+              <div className={HomepageStyles.browseByCategory__five}>
+                <img src={cultureImage} alt="CultureImage" />
+              </div>
+            </th>
+            </tr>
+            <tr>
+            <th>
+              <div className={HomepageStyles.browseByCategory__six}>
+                <img src={outdoorImage} alt="OutdoorImage" />
+              </div>
+            </th>
+            </tr>
+           
+           
+          </thead>
+        </table>
       </section>
-      
 
       <Footer />
     </>

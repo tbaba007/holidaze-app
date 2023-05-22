@@ -36,7 +36,7 @@
   top: 8%;
   left: 49%;
   transform: translate(-50%, -50%);
-  margin-top: 60vh;
+  margin-top: 500px;
   :nth-child(2) {
     display: flex;
     gap: 4px;
@@ -82,8 +82,8 @@
   align-content: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
-  width: 75em;
+  margin-top: 70px;
+  width: 60em;
   &__left {
     font-family: "Inter";
     margin-left: -30px;
@@ -292,16 +292,18 @@
       white-space: nowrap;
     }
   }
+  .subscriberContainer{
+    margin-left: 500px;
+  }
 }
 
-@media screen and (min-width:745px) and (max-width:1920px) {
+@media screen and (min-width:745px) and (max-width:1200px) {
   .banner__footer {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    align-self: center;
-    align-content: center;   
+    justify-content: center; 
     margin-top:32%; 
+    width: 53%;
     :nth-child(1) {
       z-index: 999;
     }
@@ -317,42 +319,15 @@
     }
   }
   .venuHeader{
-    // display: none;
+    justify-content: center; 
+    display: none;
   }
   .headerText{
     margin-top: -150px
   }
+
+
 }
 
-// @media screen and (min-width:900px) and (max-width:1920px) {
-//   .banner__footer {
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//     align-self: center;
-//     align-content: center;  
-//     margin-top: 550px; 
-//     :nth-child(1) {
-//       z-index: 999;
-//     }
-//     :nth-child(2) {
-//       width: 280px;
-//     }
-//     :nth-child(4) {
-//       width: 300px;
-//     }
-//     &__container {
-//       width: 300px;
-//       font-size: 10px;
-//     }
-//   }
-//   .venuHeader{
-//     display: flex;
-//     justify-content: space-between;
-//   }
-//   .headerText{
-//     margin-top: -100px
-//   }
-// }
 
 @import url("../../assets/fonts/fonts.scss");

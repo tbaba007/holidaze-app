@@ -1,14 +1,15 @@
-.image {
-  width: 100%;
-  margin-top: 82px;
+
+.HeaderContainer{
+  background-image: url('../../assets/images/HomeImage.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  margin-top: 83px;
 }
-.homeImage_mobile {
-  display: none;
-}
+
 .headerText {
   position: absolute;
-  top: 0;
-  top: 30%;
+  top: 100px;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
@@ -33,10 +34,9 @@
   display: flex;
   flex-direction: row;
   position: absolute;
-  top: 8%;
   left: 49%;
   transform: translate(-50%, -50%);
-  margin-top: 500px;
+  // margin-top: 500px;
   :nth-child(2) {
     display: flex;
     gap: 4px;
@@ -232,7 +232,6 @@
     align-items: center;
     align-self: center;
     align-content: center;   
-    margin-top: 420px; 
     :nth-child(1) {
       z-index: 999;
     }
@@ -266,32 +265,12 @@
   .subscriberContainer {
     display: none;
   }
-  .headerText {
-    h1 {
-      width: 10em;
-      white-space: nowrap;
-      margin-top: -250px;
-      margin-left: -20px;
-    }
-   
-
-    button {
-      margin-left: 10px;
-      align-self: center;
-      margin-top: 5px;
-      margin-bottom: 30px;
-    }
-  }
+ 
 }
 
 
 @media screen and (max-width:744px) and (min-width:601px) {
-  .headerText{
-    margin-top: -220px;
-    h1{
-      white-space: nowrap;
-    }
-  }
+
   .subscriberContainer{
     margin-left: 500px;
   }
@@ -302,7 +281,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center; 
-    margin-top:32%; 
+    // margin-top:32%; 
     width: 53%;
     :nth-child(1) {
       z-index: 999;
@@ -321,9 +300,6 @@
   .venuHeader{
     justify-content: center; 
     display: none;
-  }
-  .headerText{
-    margin-top: -150px
   }
 
 

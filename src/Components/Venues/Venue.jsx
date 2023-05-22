@@ -1,10 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import Button from '../ui/Button';
 import venueStyles from "./Venue.module.scss";
 
 const Venue = ({venuList}) => {
-
+  const navigate=useNavigate()
   const onView=(view)=>{
-
+    navigate(`/details/${view.id}`)
   }
 
   return (

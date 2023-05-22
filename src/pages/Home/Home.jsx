@@ -2,8 +2,6 @@ import { lazy, useEffect, useState } from "react"
 
 import beachImage from "../../assets/images/Beach.svg"
 import cultureImage from "../../assets/images/Culture.svg"
-import HomeImage from "../../assets/images/HomeImage.svg"
-import homeImage_mobile from "../../assets/images/homeImg_mobile.svg"
 import mountainImage from "../../assets/images/Mountains.svg"
 import outdoorImage from "../../assets/images/Outdoor.svg"
 import Button from "../../Components/ui/Button"
@@ -29,19 +27,8 @@ const Home = () => {
     <>
       <Header />
 
-      <div className={HomepageStyles}>
+      <div className={HomepageStyles.HeaderContainer}>
         
-            <img
-              src={HomeImage}
-              alt="HomeImage"
-              className={HomepageStyles.image}
-            />
-            <img
-              src={homeImage_mobile}
-              alt="HomeImage"
-              className={HomepageStyles.homeImage_mobile}
-            />
-
             <div className={HomepageStyles.headerText}>
               <h1>STAY WITH COMFORT</h1>
               <label>

@@ -1,4 +1,4 @@
-import { lazy, useMemo, useState } from "react"
+import { lazy, useEffect, useMemo, useState } from "react"
 
 import beachImage from "../../assets/images/Beach.svg"
 import cultureImage from "../../assets/images/Culture.svg"
@@ -12,16 +12,19 @@ import HomepageStyles from "./Home.module.scss"
 import HomepageFooter from "./HomepageFooter"
 
 const Venue = lazy(() => import("../../Components/Venues"))
-
+let didInit = false;
 const Home = () => {
   document.title = "Home"
   const [venueList, setVenueList] = useState([])
-  useMemo(() => {
+  useEffect(() => {
+    if (!didInit) {
+      didInit = true;
     const getVenues = async () => {
       const response = await getVenueList()
       setVenueList(response)
     }
     getVenues()
+  }
   }, [])
   return (
     <>

@@ -4,7 +4,7 @@ import signUpImg from '../../../assets/images/signupimg.svg'
 import signUpStyles from './SignUp.module.scss';
 import { registerUser } from '../../../services';
 import { ToastContainer, toast } from 'react-toastify';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 document.title="Register";
 
 const Signup = () => {
@@ -118,6 +118,7 @@ const Signup = () => {
           <button type="button">
            Sign Up with Google
           </button>
+          <span className={signUpStyles.signUp}>Already have an account? <Link to="/login">log in</Link></span>
         </form>
       )}
     </Formik>

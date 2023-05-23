@@ -1,4 +1,4 @@
-import { lazy, useEffect, useState } from "react"
+import { lazy, useMemo, useState } from "react"
 
 import beachImage from "../../assets/images/Beach.svg"
 import cultureImage from "../../assets/images/Culture.svg"
@@ -16,7 +16,7 @@ const Venue = lazy(() => import("../../Components/Venues"))
 const Home = () => {
   document.title = "Home"
   const [venueList, setVenueList] = useState([])
-  useEffect(() => {
+  useMemo(() => {
     const getVenues = async () => {
       const response = await getVenueList()
       setVenueList(response)

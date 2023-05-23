@@ -1,11 +1,11 @@
 import { Formik } from 'formik';
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 import loginImg from '../../../assets/images/loginImg.svg'
 import { signinUser } from '../../../services';
 import loginStyles from './Login.module.scss';
-import { ToastContainer, toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
 
 document.title="Login";
 
@@ -85,6 +85,11 @@ const Login = () => {
           <button type="submit" disabled={isSubmitting}>
             Log in
           </button>
+          <button type="button" disabled={isSubmitting}>
+            Log in with Google
+          </button>
+
+          <span className={loginStyles.signUp}>Don't have an account?<Link to="/register">Sign up for free</Link></span>
         </form>
       )}
     </Formik>

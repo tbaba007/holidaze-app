@@ -1,0 +1,17 @@
+.amenitiesContainer{
+    display: flex;
+    margin-top: 30px;
+    gap: 40px;
+    :nth-child(3){
+      margin-top: -6px;
+    }
+    &__wrapper{
+      flex-direction: column;
+      gap:5px;
+      
+    }
+    &__notAvaiable{
+        display: none;
+    }
+
+}

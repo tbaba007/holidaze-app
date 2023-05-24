@@ -5,13 +5,13 @@ import venueStyles from "./Venue.module.scss";
 const Venue = ({venuList}) => {
   const navigate=useNavigate()
   const onView=(view)=>{
-    navigate(`/details/${view.id}`)
+    navigate(`/details/${view.id}`,{state:view})
   }
 
   return (
     <>
       <section className={venueStyles.container__wrapper}>
-        {venuList.slice(30,33).map((item) => {
+        {venuList.slice(33,36).map((item) => {
           const {address,city,country}=item.location
           return (
             <section className={venueStyles.container} key={item.id}>

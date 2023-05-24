@@ -1,3 +1,174 @@
-.ViewDetailsContainer{
-    
+.ViewDetailsContainer {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__title {
+    font-family: "Inter";
+    font-style: Bold;
+    font-size: 24px;
+    line-height: 29px;
+    line-height: 100%;
+    text-align: left;
+    margin-top: 75px;
+    margin-left: 200px;
+
+    section {
+      display: flex;
+      gap: 50px;
+      label {
+        color: #081229;
+        font-family: "Inter";
+        font-style: "Regular";
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &__img {
+    max-width: 83.5%;
+    min-width: 83.5%;
+    max-height: 20%;
+    margin-left: 100px;
+    margin-top: 50px;
+  }
+
+  &__body {
+    display: flex;
+
+    &__left {
+      text-align: left;
+      margin-left: 200px;
+      font-size: 13px;
+      width: 35%;
+
+      label {
+        font-size: 26px;
+      }
+    }
+    &__right {
+      background-color: #f3f6f8;
+      width: 34.5%;
+      &__unitPrice {
+        font-family: "Roboto";
+        line-height: 28px;
+        text-align: Left;
+        margin-left: 70px;
+      }
+
+      &__inputContainer {
+        width: 400px;
+        height: 100px;
+        border-radius: 6px;
+        margin-left: 13%;
+        border: 1px solid grey;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+      }
+      &__input {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          label {
+            font-size: 10px;
+            margin-top: 10px;
+          }
+          input {
+            padding-left: -20px;
+            border: none;
+            outline: none;
+            margin-top: 1px;
+          }
+        }
+      }
+      button {
+        margin-top: 20px;
+        margin-left: 13%;
+        width: 400px;
+      }
+      &__verticalDivider {
+        width: 1px;
+        height: 50px;
+        background-color: grey;
+      }
+      &__horizontalDivider {
+        min-width: 400px;
+        margin-left: -30px;
+        height: 1px;
+        background-color: grey;
+        position: absolute;
+        margin-top: 50px;
+      }
+      &__ddlGuests {
+        min-width: 300px;
+        margin-left: -29px;
+        height: 1px;
+        background-color: grey;
+        position: absolute;
+        margin-top: 60px;
+        select {
+          border: none;
+          outline: none;
+          height: 20px;
+        }
+      }
+      &__Pricing {
+        display: flex;
+        gap: 100px;
+        :nth-child(1) {
+          margin-left: 70px;
+        }
+      }
+      &__footer {
+        font-family: "Inter";
+        font-size: 10px;
+        line-height: 24px;
+        text-align: center;
+        align-items: center;
+        align-self: center;
+        align-content: center;
+        margin-left: 200px;
+      }
+    }
+  }
 }
+
+@media screen and (max-device-width: 1024px) and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+  .ViewDetailsContainer {
+    &__title {
+      margin-left: 100px;
+      padding-top: 10px;
+    }
+    &__img {
+      margin-left: 130px;
+    }
+    &__body {
+      margin-left: 60px;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .ViewDetailsContainer {
+    &__title {
+      margin-left: 270px;
+      padding-top: 10px;
+    }
+    &__img {
+      margin-left: 130px;
+    }
+    &__body {
+      margin-left: 60px;
+      width: 100%;
+    }
+  }
+}
+
+@import url("../../assets/fonts/fonts.scss");

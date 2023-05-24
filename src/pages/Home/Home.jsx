@@ -17,14 +17,13 @@ const Home = () => {
   document.title = "Home"
   const [venueList, setVenueList] = useState([])
   useEffect(() => {
-    if (!didInit) {
-      didInit = true;
+   
     const getVenues = async () => {
       const response = await getVenueList()
       setVenueList(response)
     }
     getVenues()
-  }
+  
   }, [])
   return (
     <>
